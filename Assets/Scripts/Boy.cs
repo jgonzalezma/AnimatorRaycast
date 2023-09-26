@@ -13,6 +13,7 @@ public class Boy : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     // Update is called once per frame
@@ -31,6 +32,7 @@ public class Boy : MonoBehaviour
         else
         {
             anim.SetBool("IsMoving", false);
+            anim.SetTrigger("Attack");
         }
     }
 
